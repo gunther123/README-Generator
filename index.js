@@ -1,13 +1,13 @@
 //Reference to all required packages
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generatePage = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
-        name: 'project-name',
+        name: 'projectName',
         message: 'What is the name of your Project? (Required)',
         validate: nameInput => {
           if (nameInput) {
@@ -78,16 +78,17 @@ const questions = [
       },
       {
         type: 'confirm',
-        name: 'confirm-license',
+        name: 'confirmLicense',
         message: 'Would you like to add a license?',
         default: true
       },
       {
         type: 'list',
         name: 'license',
-        message: 'What type of license would you like to use? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node', 'Markdown', 'Python', 'C#']
-      },
+        message: 'Provide some information about yourself:',
+        choices: ['Javascript', 'ICS', 'Test'],
+        when: ({ confirmLicense }) => confirmLicense
+      }
 ];
 
 // TODO: Create a function to write README file
@@ -99,19 +100,22 @@ function writeToFile(fileName, data) {
       });
 }
 
+//TODO: Create function to run Prompt
+const promptUser = promptInput => {
+
+    return inquirer.prompt(questions)
+    .then((data) => {
+        console.log(generateMarkdown(data));
+        return generateMarkdown(data);
+      })
+    .catch((err) => {
+        if (err) throw new Error(err);
+      });
+}
+
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-    .then((answers) => {
-        console.log(answers);
-      })
-    .catch((error) => {
-        if (error.isTtyError) {
-          (console.log("Something went wrong."))
-        } else {
-          console.log("Something else went wrong.")
-        }
-      });
+    promptUser();
 }
 
 // Function call to initialize app
