@@ -1,7 +1,7 @@
 //Reference to all required packages
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generatePage = require('./src/generateMarkdown');
+const generatePage = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -66,7 +66,7 @@ const questions = [
       {
         type: 'input',
         name: 'contributions',
-        message: 'Provide intended ways for this project to be used. (Required)',
+        message: 'Provide instructions on how other developers can contribute. (Required)',
         validate: contributionsInput => {
           if (contributionsInput) {
             return true;
@@ -100,7 +100,19 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers);
+      })
+    .catch((error) => {
+        if (error.isTtyError) {
+          (console.log("Something went wrong."))
+        } else {
+          console.log("Something else went wrong.")
+        }
+      });
+}
 
 // Function call to initialize app
 init();
