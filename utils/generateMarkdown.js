@@ -1,18 +1,44 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if(license){
+    return `![github license](https://img.shields.io/badge/license-${license}-blue.svg)`
+  }
+  else{
+    return ''
+  }
+
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+  function renderLicenseLink(license) {
+    if(license){
+      return `* [License](#license)`
+    }
+    else {
+      return ''
+    }
+
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if(license){
+    return `## License
+    This project has a license of ${license}`
+  } 
+  else{
+    return ''
+  }
+  }
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.projectName}
+  return `# ${data.projectName} ${renderLicenseBadge(data.license)}
 
 ## Description 
 
@@ -26,7 +52,7 @@ ${data.description}
 * [Usage](#usage)
 * [Contributions](#contributions)
 * [Credits](#credits)
-* [License](#license)
+${renderLicenseLink(data.license)}
 
 ##Languages
 ${data.languages}
@@ -43,19 +69,14 @@ ${data.usage}
 ## Contributions
 ${data.contributions}
 
-## Credits
+${renderLicenseSection(data.license)}
 
-List your collaborators, if any, with links to their GitHub profiles.
+## Tests
+${data.tests}
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-
-## License
-
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
-
+## Questions
+To contact me about this project please visit my github or send me an email at this address ${data.address}
+[${data.github}](https://github.com/${data.github})
 `;
 }
 

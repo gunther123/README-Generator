@@ -35,7 +35,7 @@ const questions = [
         type: 'checkbox',
         name: 'languages',
         message: 'What did you build this project with? (Check all that apply)',
-        choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node', 'Markdown', 'Python', 'C#']
+        choices: ['JavaScript', 'HTML', 'CSS', 'jQuery', 'Bootstrap', 'Node', 'Markdown', 'Python', 'C#']
       },
       {
         type: 'input',
@@ -86,16 +86,55 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Provide some information about yourself:',
-        choices: ['Javascript', 'ICS', 'Test'],
+        choices: ['GNU GPLv3', 'ICS', 'MIT'],
         when: ({ confirmLicense }) => confirmLicense
-      }
+      },
+      {
+        type: 'input',
+        name: 'tests',
+        message: 'Provide tests or examples for users to use. (Required)',
+        validate: testsInput => {
+          if (testsInput) {
+            return true;
+          } else {
+            console.log('You need to provide tests or examples!');
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Provide your github username. (Required)',
+        validate: githubInput => {
+          if (githubInput) {
+            return true;
+          } else {
+            console.log('Please provide your github username!');
+            return false;
+          }
+        }
+      },
+      {
+        type: 'input',
+        name: 'address',
+        message: 'Provide an email address to be contacted at. (Required)',
+        validate: addressInput => {
+          if (addressInput) {
+            return true;
+          } else {
+            console.log('Please provide your github username!');
+            return false;
+          }
+        }
+      },
+
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) throw new Error(err);
-  
         console.log('Page created! Check out README.md in this directory to see it!');
       });
 }
