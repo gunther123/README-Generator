@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/gunther123/README-Generator/issues"
   },
-  "homepage": "https://github.com/gunther123/README-Generator#readme"
+  "homepage": "https://github.com/gunther123/README-Generator#readme",
+  "devDependencies": {}
 }
