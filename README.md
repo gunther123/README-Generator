@@ -36,5 +36,5 @@ If you think you can improve this project further please fork this repo and then
 Enter in the word test for all answers and you should see a file output in the dist folder.
 
 ## Questions
-To contact me about this project please visit my [github](https://github.com/gunther123)  or send me an email at this address [steven.t.slocum@gmail.com](steven.t.slocum@gmail.com)
+To contact me about this project please visit my [github](https://github.com/gunther123) or send me an email at this address [steven.t.slocum@gmail.com](steven.t.slocum@gmail.com)
 

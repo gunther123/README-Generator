@@ -76,7 +76,7 @@ ${renderLicenseSection(data.license)}
 ${data.tests}
 
 ## Questions
-To contact me about this project please visit my [${data.github}](https://github.com/${data.github}) or send me an email at this address ${data.address}
+To contact me about this project please visit my [github](https://github.com/${data.github}) or send me an email at this address [${data.address}](${data.address})
 `;
 }
 
