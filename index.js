@@ -144,8 +144,7 @@ const promptUser = promptInput => {
 
     return inquirer.prompt(questions)
     .then((data) => {
-        console.log(generateMarkdown(data));
-        return generateMarkdown(data);
+        writeToFile('README.md', generateMarkdown(data));
       })
     .catch((err) => {
         if (err) throw new Error(err);
