@@ -54,7 +54,8 @@ ${data.description}
 * [Credits](#credits)
 ${renderLicenseLink(data.license)}
 
-##Languages
+## Languages
+
 ${data.languages}
 
 ## Installation
@@ -75,8 +76,7 @@ ${renderLicenseSection(data.license)}
 ${data.tests}
 
 ## Questions
-To contact me about this project please visit my github or send me an email at this address ${data.address}
-[${data.github}](https://github.com/${data.github})
+To contact me about this project please visit my [${data.github}](https://github.com/${data.github}) or send me an email at this address ${data.address}
 `;
 }
 

@@ -14,7 +14,7 @@ This project is to create an easy to use CLI to create a Professional README fil
 * [Credits](#credits)
 * [License](#license)
 
-##Languages
+## Languages
 Node,Markdown
 
 ## Installation
@@ -36,5 +36,5 @@ If you think you can improve this project further please fork this repo and then
 Enter in the word test for all answers and you should see a file output in the dist folder.
 
 ## Questions
-To contact me about this project please visit my github or send me an email at this address steven.t.slocum@gmail.com
-[gunther123](https://github.com/gunther123)
+To contact me about this project please visit my [github](https://github.com/gunther123)  or send me an email at this address [steven.t.slocum@gmail.com](steven.t.slocum@gmail.com)
+
