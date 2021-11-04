@@ -86,7 +86,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Provide some information about yourself:',
-        choices: ['GNU GPLv3', 'ICS', 'MIT'],
+        choices: ['GPLv3', 'ICS', 'MIT'],
         when: ({ confirmLicense }) => confirmLicense
       },
       {
